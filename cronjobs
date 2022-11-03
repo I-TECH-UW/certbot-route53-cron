@@ -1,1 +1,1 @@
-0 1 * * * ./entrypoint.sh >> /certbot.out 2>&1
+0 1 * * * /certs.sh >> /certbot.out 2>&1

@@ -4,8 +4,8 @@ FROM certbot/dns-route53:latest
 COPY cronjobs /etc/crontabs/root
 
 ADD entrypoint.sh /entrypoint.sh
+ADD certs.sh /certs.sh
 
-# start crond with log level 8 in foreground, output to stderr
-RUN ["crond", "-d", "8"]
+RUN chmod u+x /entrypoint.sh /certs.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
